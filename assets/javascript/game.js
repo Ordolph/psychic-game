@@ -1,3 +1,4 @@
+// Global variables
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
 var randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
 var wins = document.getElementById("wins")
@@ -9,6 +10,7 @@ var lossNum = 0;
 var remGuessNum = 8;
 var guessLetter = [];
 
+// Starter lines for game
 wins.textContent = "Wins: " + winsNum;
 losses.textContent = "Losses: " + lossNum;
 remGuesses.textContent = "Remaining Guesses: " + remGuessNum;
@@ -16,10 +18,12 @@ guesses.textContent = "Your Guesses: " + guessLetter;
 
 console.log(randomLetter)
 
+// GAME
 document.onkeyup = function game(start) {
 
     var userGuess = start.key;
 
+// Functions for game conditionals
     function win() {
 
         winsNum++;
@@ -55,6 +59,7 @@ document.onkeyup = function game(start) {
         guesses.textContent = "Your Guesses: " + guessLetter;
     }
 
+// Game conditionals
     if (alphabet.includes(event.key)) {
 
         if (randomLetter == userGuess) {
