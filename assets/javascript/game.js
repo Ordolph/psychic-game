@@ -60,23 +60,27 @@ document.onkeyup = function game(start) {
     }
 
 // Game conditionals
-    if (alphabet.includes(event.key)) {
+    if (alphabet.includes(event.key) && guessLetter.indexOf(event.key) == -1) {
 
-        if (randomLetter == userGuess) {
+            if (randomLetter == userGuess) {
 
-            win();
-        }
+                win();
+            }
 
-        else if (remGuessNum == 0) {
+            else if (remGuessNum == 0) {
 
-            lose()
-        }
+                lose()
+            }
 
-        else {
+            else {
 
-            wrongGuess()
-        }
+                wrongGuess()
+            }
+            
     }
-    console.log(userGuess)
 
+    console.log(userGuess)
 }
+    
+
+
